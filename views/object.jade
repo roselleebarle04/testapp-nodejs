@@ -2,8 +2,24 @@ extends layout
 
 block content
     h1= object_name
-    ul
-        each val, key in properties
-            li= key + ": " + val
+    each val, key in properties
+        if !(typeof(val) === 'object')
+            p= key + " " + val
 
-    
+    each val, key in properties
+        if typeof(val) === 'object'
+           +object_group(val, key)
+
+mixin object_group(obj, name)
+    p= name
+    ul
+        each val, key in obj
+            if !(typeof(val) === 'object')
+                if key!= 'parent'
+                    li= key + " " + val
+
+        each val, key in obj
+            if typeof(val) === 'object'
+               +object_group(val, key)
+        
+  

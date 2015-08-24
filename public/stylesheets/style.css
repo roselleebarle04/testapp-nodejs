@@ -6,3 +6,7 @@ body {
 a {
   color: #00B7FF;
 }
+
+ul li {
+	list-style-type: none !important;
+}

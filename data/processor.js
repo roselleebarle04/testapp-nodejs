@@ -1,5 +1,4 @@
 var dbApi = require('./api');
-var processor = require('./processor');
 
 /* This processor extends and uses the functionalities of the database api */
 
